@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# image file size at GiB
+SIZE=10
+
+# path of HDD image
+IMAGE_PATH=.docker/Docker.img
+
+# path of original hyperkit
+HYPERKIT=$(dirname $0)/com.docker.hyperkit.original
+
+if [ ! -e $HYPERKIT ]; then
+  echo "cannot find $HYPERKIT" >&2
+  exit 1
+fi
+
+if [ ! -e $IMAGE_PATH ]; then
+  mkdir -p $(dirname $IMAGE_PATH)
+  dd if=/dev/zero of=$IMAGE_PATH bs=1073741824 count=$SIZE
+fi
+
+args=()
+
+for arg in "$@"; do
+  if [[ $arg == *"qcow2"* ]]; then
+    args+=("3,ahci-hd,${IMAGE_PATH}")
+  else
+    args+=($arg)
+  fi
+done
+
+$HYPERKIT "${args[@]}"
