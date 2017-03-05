@@ -25,7 +25,7 @@ for arg in "$@"; do
   if [[ $arg == *"qcow2"* ]]; then
     args+=("3,ahci-hd,${IMAGE_PATH}")
   else
-    args+=($arg)
+    args+=("${arg}")
   fi
 done
 
