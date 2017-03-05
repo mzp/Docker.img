@@ -4,7 +4,7 @@
 SIZE=10
 
 # path of HDD image
-IMAGE_PATH=.docker/Docker.img
+IMAGE_PATH=$HOME/.docker/jp.mzp.img/Docker.img
 
 # path of original hyperkit
 HYPERKIT=$(dirname $0)/com.docker.hyperkit.original
