@@ -1,3 +1,5 @@
+**This may break your docker environments. Use at your own risk**
+
 # Docker.img: Use raw disk image at Docker for Mac
 Current Docker for Mac(as long as 17.03.0-ce-mac1) use qcow2 as disk image format. But qcow2 is worse performance than raw format.
 
