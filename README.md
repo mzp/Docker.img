@@ -32,7 +32,7 @@ fio -filename=/tmp/test2g -direct=1 -rw=write -bs=4k -size=2G -numjobs=64 -runti
 ### Sequential Read
 
 |               | Average(MiB/s) | Min(MiB/s) | Max(MiB/s) |
-| ------------- |:--------------:|-----------:|-----------:|
+| ------------- | --------------:|-----------:|-----------:|
 | navite        | 361            | 361        | 361        |
 | qcow2         | 46             | 46         | 46         |
 | docker machine| 105            | 105        | 105        |
@@ -41,7 +41,7 @@ fio -filename=/tmp/test2g -direct=1 -rw=write -bs=4k -size=2G -numjobs=64 -runti
 ### Sequential Write
 
 |               | Average(MiB/s) | Min(MiB/s) | Max(MiB/s) |
-| ------------- |:--------------:|-----------:|-----------:|
+| ------------- | --------------:|-----------:|-----------:|
 | navite        | 487            | 487        | 487        |
 | qcow2         | 29             | 29         | 29         |
 | docker machine| 51             | 51         | 51         |
